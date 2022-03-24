@@ -15,5 +15,15 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var degerler = c.Kategoris.ToList();
             return View(degerler);
         }
+        [HttpGet] //Form yüklendiği zaman ilk bu alanı çalıştır.
+        public ActionResult KategoriEkle()
+        {
+            return View();
+        }
+        [HttpPost]//Butona tıklandığı an.
+        public ActionResult KategoriEkle()
+        {
+            return View();
+        }
     }
 }
