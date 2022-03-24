@@ -21,9 +21,11 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             return View();
         }
         [HttpPost]//Butona tıklandığı an.
-        public ActionResult KategoriEkle()
+        public ActionResult KategoriEkle(Kategori k)
         {
-            return View();
+            c.Kategoris.Add(k);
+            c.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
