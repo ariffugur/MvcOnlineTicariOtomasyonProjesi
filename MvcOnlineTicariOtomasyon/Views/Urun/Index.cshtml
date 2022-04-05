@@ -17,5 +17,18 @@
         <th>GÖRSEL</th>
 
     </tr>
+    @foreach(var u in Model)
+{
+    <tr>
+    <td>@u.UrunId</td>
+    <td>@u.UrunAd</td>
+    <td>@u.Marka</td>
+    <td>@u.Stok</td>
+    <td>@u.AlisFiyati</td>
+    <td>@u.SatisFiyati</td>
+    <td>@u.Kategori.KategoriAd</td>
+    <td>@u.UrunGorsel</td>
+    </tr>  
+}
 </table>
 

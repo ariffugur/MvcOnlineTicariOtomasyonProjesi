@@ -29,7 +29,8 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
         [Column(TypeName = "Varchar")]
         [StringLength(300)]
         public string UrunGorsel { get; set;}
-        public Kategori Kategori { get; set; }
+        public virtual Kategori Kategori { get; set; }
+        //virtual kullanılmasının nedeni, kategori sınıfındaki değerlere de ulaşabilmek
         public ICollection<SatisHareket> SatisHarekets { get; set; }
     }
 }
