@@ -1,8 +1,21 @@
-﻿
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar;
+@model List<Urun>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>ÜRÜN</th>
+        <th>MARKA</th>
+        <th>STOK</th>
+        <th>ALIŞ FİYAT</th>
+        <th>SATIŞ FİYAT</th>
+        <th>KATEGORİ</th>
+        <th>GÖRSEL</th>
 
-<h2>Index</h2>
+    </tr>
+</table>
 
