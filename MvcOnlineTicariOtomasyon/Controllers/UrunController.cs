@@ -15,12 +15,12 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var urunler=c.Uruns.ToList();
             return View(urunler);
         }
-        [HttpPost]
+        [HttpGet]
         public ActionResult YeniUrun()
         {
             return View();
         }
-        [HttpGet]
+        [HttpPost]
         public ActionResult YeniUrun(Urun p)
         {
             c.Uruns.Add(p);
