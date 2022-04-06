@@ -23,13 +23,15 @@
     @Html.TextBoxFor(x => x.SatisFiyati, new { @class = "form-control" })
     <br />
     @Html.LabelFor(x => x.Kategori)
-    @Html.TextBoxFor(x => x.Kategori, new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.Kategori.KategoriID, new { @class = "form-control" })
     <br />
     @Html.LabelFor(x => x.UrunGorsel)
     @Html.TextBoxFor(x => x.UrunGorsel, new { @class = "form-control" })
     <br />
     @Html.LabelFor(x => x.Durum)
     @Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Kaydet</button>
 
 
 </form>
