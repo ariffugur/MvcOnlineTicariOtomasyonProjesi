@@ -24,7 +24,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
                                                Text = x.KategoriAd, 
                                                Value=x.KategoriID.ToString()
                                            }).ToList();
-            
+            ViewBag.dgr1 = deger1;
 
                                         
             return View();
