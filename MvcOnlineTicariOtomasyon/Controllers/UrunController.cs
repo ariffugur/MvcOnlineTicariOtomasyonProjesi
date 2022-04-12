@@ -45,6 +45,14 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         }
         public ActionResult UrunGetir(int id)
         {
+            List<SelectListItem> deger1 = (from x in c.Kategoris.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.KategoriAd,
+                                               Value = x.KategoriID.ToString()
+                                           }).ToList();
+            ViewBag.dgr1 = deger1;
+
             var urunDeger = c.Uruns.Find(id);
             return View("UrunGetir",urunDeger);
         }
