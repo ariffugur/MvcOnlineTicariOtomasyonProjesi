@@ -56,5 +56,19 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var urunDeger = c.Uruns.Find(id);
             return View("UrunGetir",urunDeger);
         }
+        public ActionResult UrunGuncelle(Urun p)
+        {
+            var urn = c.Uruns.Find(p.UrunId);
+            urn.AlisFiyati = p.AlisFiyati;
+            urn.Durum = p.Durum;
+            urn.KategoriId = p.KategoriId;
+            urn.Marka = p.Marka;
+            urn.SatisFiyati = p.SatisFiyati;
+            urn.Stok = p.Stok;
+            urn.UrunAd = p.UrunAd;
+            urn.UrunGorsel = p.UrunGorsel;
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
