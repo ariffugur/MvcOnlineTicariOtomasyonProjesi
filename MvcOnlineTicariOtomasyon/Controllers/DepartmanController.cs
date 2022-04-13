@@ -9,11 +9,27 @@ namespace MvcOnlineTicariOtomasyon.Controllers
     public class DepartmanController : Controller
     {
         // GET: Departman
-        Context c=new Context();
+        Context c = new Context();
         public ActionResult Index()
         {
-            var degerler=c.Departmans.ToList();
+            var degerler = c.Departmans.Where(x => x.Durum == true).ToList();
             return View(degerler);
         }
+        [HttpGet]
+        public ActionResult DepartmanEkle()
+        {
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult DepartmanEkle(Departman d)
+        {
+            {
+                c.Departmans.Add(d);
+                c.SaveChanges();
+                return RedirectToAction("Index");
+            }
+        }
+
     }
 }
