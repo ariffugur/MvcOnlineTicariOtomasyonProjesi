@@ -50,6 +50,10 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult DepartmanDetay(int id)
+        {
+            return View();
+        }
 
     }
 }
