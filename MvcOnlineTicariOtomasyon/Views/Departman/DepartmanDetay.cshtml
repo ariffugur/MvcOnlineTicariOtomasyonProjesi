@@ -7,10 +7,9 @@
 <br />
 <h2>Departman Detay Sayfası</h2>
 <br />
-<div style="background-color:darkgray">
-    deneme
-</div>
-<br />
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Departman Adı: @ViewBag.d</li>
+</ol>
 <table class="table table-hover">
     <tr>
         <th>Personel ID</th>
@@ -20,15 +19,15 @@
         <th>Satışlar</th>
     </tr>
     @foreach (var x in Model)
-            {
-                <tr>
-                    <td>@x.PersonelId</td>
-                    <td>@x.PersonelAd</td>
-                    <td>@x.PersonelSoyad</td>
-                    <td>@x.PersonelGorsel</td>
-                    <td><a href="#" class="btn btn-default" style="background-color:orangered"> Satışlar</a></td>
-                </tr>
-            }
-    
+    {
+        <tr>
+            <td>@x.PersonelId</td>
+            <td>@x.PersonelAd</td>
+            <td>@x.PersonelSoyad</td>
+            <td>@x.PersonelGorsel</td>
+            <td><a href="/Departman/DepartmanPersonelSatis/@x.PersonelId" class="btn btn-default" style="background-color:navajowhite"> Satışlar</a></td>
+        </tr>
+    }
+
 </table>
 
