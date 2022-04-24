@@ -43,7 +43,17 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         }
         public ActionResult CariGuncelle(Cariler p)
         {
-
+            if (!ModelState.IsValid)
+            {
+                return View("CariGetir");
+            }
+            var cari=c.Carilers.Find(p.CariId);
+            cari.CariAd = p.CariAd;
+            cari.CariSoyad = p.CariSoyad;
+            cari.CariSehir = p.CariSehir;
+            cari.CariMail = p.CariMail;
+            c.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
