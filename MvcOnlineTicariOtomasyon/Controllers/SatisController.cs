@@ -77,5 +77,18 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var deger = c.SatisHarekets.Find(id);
             return View("SatisGetir",deger);
         }
+        public ActionResult SatisGuncelle(SatisHareket p)
+        {
+            var deger = c.SatisHarekets.Find(p.SatisId);
+            deger.CariId=p.CariId;
+            deger.Adet=p.Adet;
+            deger.Fiyat=p.Fiyat;
+            deger.PersonelId=p.PersonelId;
+            deger.Tarih=p.Tarih;
+            deger.ToplamTutar=p.ToplamTutar;
+            deger.UrunId=p.UrunId;
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
