@@ -45,6 +45,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult YeniSatis(SatisHareket s)
         {
+            s.Tarih=DateTime.Parse(DateTime.Now.ToShortDateString());
             c.SatisHarekets.Add(s);
             c.SaveChanges();
             return RedirectToAction("Index");
