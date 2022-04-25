@@ -23,9 +23,23 @@ namespace MvcOnlineTicariOtomasyon.Controllers
                                            select new SelectListItem
                                            {
                                                Text = x.UrunAd,
-                                               Value = x.UrunAd.ToString()
+                                               Value = x.UrunId.ToString()
                                            }).ToList();
             ViewBag.dgr1 = deger1;
+            List<SelectListItem> deger2 = (from x in c.Carilers.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.CariAd+" "+x.CariSoyad,
+                                               Value = x.CariId.ToString()
+                                           }).ToList();
+            ViewBag.dgr2 = deger2;
+            List<SelectListItem> deger3 = (from x in c.Personels.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.PersonelAd+" "+x.PersonelSoyad,
+                                               Value = x.PersonelId.ToString()
+                                           }).ToList();
+            ViewBag.dgr3 = deger3;
             return View();
         }
         [HttpPost]
