@@ -80,15 +80,18 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             return View(degerler);
         }
         [HttpGet]
-        public ActionResult SatisYap()
+        public ActionResult SatisYap(int id)
         {
-            List<SelectListItem> deger1 = (from x in c.Personels.ToList()
+            List<SelectListItem> deger = (from x in c.Personels.ToList()
                                            select new SelectListItem
                                            {
                                                Text = x.PersonelAd + " " + x.PersonelSoyad,
                                                Value = x.PersonelId.ToString()
                                            }).ToList();
-            ViewBag.dgr1 = deger1;
+            ViewBag.dgr = deger;
+            var urundeger=c.Uruns.Find(id);
+            ViewBag.dgr1 = urundeger.UrunId;
+            ViewBag.dgr2 = urundeger.SatisFiyati;
             return View();
         }
         [HttpPost]
