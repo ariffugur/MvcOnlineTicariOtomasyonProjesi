@@ -24,11 +24,11 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult DepartmanEkle(Departman d)
         {
-            {
+            
                 c.Departmans.Add(d);
                 c.SaveChanges();
                 return RedirectToAction("Index");
-            }
+            
         }
         public ActionResult DepartmanSil(int id)
         {

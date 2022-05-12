@@ -4,6 +4,15 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
+
+<br />
+@using (Html.BeginForm("Index", "Kargo", FormMethod.Get))
+{
+    <p>
+        Kargo Takip Numarası: @Html.TextBox("p")
+        <input type="submit" value="Ara" />
+    </p>
+}
 <table class="table table-bordered" style="margin-top:20px;">
     <tr>
         <th>ID</th>
@@ -16,23 +25,23 @@
     @foreach (var k in Model)
     {
 
-<tr>
-    <td>
-        @k.DepartmanId
-    </td>
-    <td>
-        @k.DepartmanAd
-    </td>
-    <td>
-        <a href="/Departman/DepartmanSil/@k.DepartmanId" class="btn btn-danger">Sil</a>
-    </td>
-    <td>
-        <a href="/Departman/DepartmanGetir/@k.DepartmanId" class="btn btn-warning">Güncelle</a>
-    </td>
-    <td>
-        <a href="/Departman/DepartmanDetay/@k.DepartmanId" class="btn btn-default" style="background-color:lightcoral; color:white">Detaylar</a>
-    </td>
-</tr>
+        <tr>
+            <td>
+                @k.DepartmanId
+            </td>
+            <td>
+                @k.DepartmanAd
+            </td>
+            <td>
+                <a href="/Departman/DepartmanSil/@k.DepartmanId" class="btn btn-danger">Sil</a>
+            </td>
+            <td>
+                <a href="/Departman/DepartmanGetir/@k.DepartmanId" class="btn btn-warning">Güncelle</a>
+            </td>
+            <td>
+                <a href="/Departman/DepartmanDetay/@k.DepartmanId" class="btn btn-default" style="background-color:lightcoral; color:white">Detaylar</a>
+            </td>
+        </tr>
     }
 </table>
 <a href="/Departman/DepartmanEkle" class="btn btn-info">Departman Ekle</a>
