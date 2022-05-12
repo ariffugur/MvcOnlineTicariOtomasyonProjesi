@@ -11,7 +11,8 @@
     @Html.TextBoxFor(x => x.UrunId, new { @class = "form-control" })
     <br />
     @Html.LabelFor(x => x.PersonelId)
-    @Html.TextBoxFor(x => x.PersonelId, new { @class = "form-control" })
+    @Html.DropDownListFor(x => x.PersonelId, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+    @*@Html.TextBoxFor(x => x.KategoriId, new { @class = "form-control" })*@
     <br />
     @Html.LabelFor(x => x.CariId)
     @Html.TextBoxFor(x => x.CariId, new { @class = "form-control" })
@@ -24,11 +25,11 @@
     <br />
     @Html.LabelFor(x => x.ToplamTutar)
     @Html.TextBoxFor(x => x.ToplamTutar, new { @class = "form-control" })
-   
+
     <br />
     @Html.LabelFor(x => x.Tarih)
     @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
-    
+
     <button class="btn btn-primary">Satış Yap</button>
 
 

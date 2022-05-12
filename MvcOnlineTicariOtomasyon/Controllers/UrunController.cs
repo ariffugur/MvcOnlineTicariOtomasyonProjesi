@@ -82,6 +82,13 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpGet]
         public ActionResult SatisYap()
         {
+            List<SelectListItem> deger1 = (from x in c.Personels.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.PersonelAd + " " + x.PersonelSoyad,
+                                               Value = x.PersonelId.ToString()
+                                           }).ToList();
+            ViewBag.dgr1 = deger1;
             return View();
         }
         [HttpPost]
