@@ -28,7 +28,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         public ActionResult GelenMesajlar()
         {
             var mail = (string)Session["CariMail"];
-            var mesajlar = c.Mesajlars.Where(x => x.Alici == mail).ToList();
+            var mesajlar = c.Mesajlars.Where(x => x.Alici == mail).OrderByDescending(x=>x.MesajID).ToList();
             var gelenSayisi = c.Mesajlars.Count(x => x.Alici == mail).ToString();
             var gidenSayisi = c.Mesajlars.Count(x => x.Gonderici == mail).ToString();
             ViewBag.d2 = gidenSayisi;
@@ -38,7 +38,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         public ActionResult GidenMesajlar()
         {
             var mail = (string)Session["CariMail"];
-            var mesajlar = c.Mesajlars.Where(x => x.Gonderici == mail).ToList();
+            var mesajlar = c.Mesajlars.Where(x => x.Gonderici == mail).OrderByDescending(z => z.MesajID).ToList();
             var gelenSayisi = c.Mesajlars.Count(x => x.Alici == mail).ToString();
             ViewBag.d1 = gelenSayisi;
             var gidenSayisi = c.Mesajlars.Count(x => x.Gonderici == mail).ToString();
@@ -59,11 +59,21 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpGet]
         public ActionResult YeniMesaj()
         {
+            var mail = (string)Session["CariMail"];
+            var gelenSayisi = c.Mesajlars.Count(x => x.Alici == mail).ToString();
+            var gidenSayisi = c.Mesajlars.Count(x => x.Gonderici == mail).ToString();
+            ViewBag.d2 = gidenSayisi;
+            ViewBag.d1 = gelenSayisi;
             return View();
         }
         [HttpPost]
         public ActionResult YeniMesaj(Mesajlar m)
         {
+            var mail = (string)Session["CariMail"];
+            m.Tarih = DateTime.Parse(DateTime.Now.ToShortDateString());
+            m.Gonderici= mail;
+            c.Mesajlars.Add(m);
+            c.SaveChanges();
             return View();
         }
     }
