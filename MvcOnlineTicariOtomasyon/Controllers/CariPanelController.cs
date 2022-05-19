@@ -45,24 +45,26 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             ViewBag.d2 = gidenSayisi;
             return View(mesajlar);
         }
-        public ActionResult MesajDetay()
+        public ActionResult MesajDetay(int id)
         {
+            var degerler = c.Mesajlars.Where(x => x.MesajID == id).ToList();
             var mail = (string)Session["CariMail"];
             var gelenSayisi = c.Mesajlars.Count(x => x.Alici == mail).ToString();
             var gidenSayisi = c.Mesajlars.Count(x => x.Gonderici == mail).ToString();
             ViewBag.d2 = gidenSayisi;
             ViewBag.d1 = gelenSayisi;
+            return View(degerler);
+        }
+
+        [HttpGet]
+        public ActionResult YeniMesaj()
+        {
             return View();
         }
-        //[HttpGet]
-        //public ActionResult YeniMesaj()
-        //{
-        //    return View();
-        //}
-        //[HttpPost]
-        //public ActionResult YeniMesaj()
-        //{
-        //    return View();
-        //}
+        [HttpPost]
+        public ActionResult YeniMesaj(Mesajlar m)
+        {
+            return View();
+        }
     }
 }
