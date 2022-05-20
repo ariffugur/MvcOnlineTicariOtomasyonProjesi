@@ -28,7 +28,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         public ActionResult GelenMesajlar()
         {
             var mail = (string)Session["CariMail"];
-            var mesajlar = c.Mesajlars.Where(x => x.Alici == mail).OrderByDescending(x=>x.MesajID).ToList();
+            var mesajlar = c.Mesajlars.Where(x => x.Alici == mail).OrderByDescending(x => x.MesajID).ToList();
             var gelenSayisi = c.Mesajlars.Count(x => x.Alici == mail).ToString();
             var gidenSayisi = c.Mesajlars.Count(x => x.Gonderici == mail).ToString();
             ViewBag.d2 = gidenSayisi;
@@ -71,10 +71,20 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         {
             var mail = (string)Session["CariMail"];
             m.Tarih = DateTime.Parse(DateTime.Now.ToShortDateString());
-            m.Gonderici= mail;
+            m.Gonderici = mail;
             c.Mesajlars.Add(m);
             c.SaveChanges();
             return View();
+        }
+        public ActionResult KargoTakip(string p)
+        {
+            var k = from x in c.KargoDetays select x;
+            if (!string.IsNullOrEmpty(p))
+            {
+                k = k.Where(y => y.TakipKodu.Contains(p));
+            }
+
+            return View(k.ToList());
         }
     }
 }
