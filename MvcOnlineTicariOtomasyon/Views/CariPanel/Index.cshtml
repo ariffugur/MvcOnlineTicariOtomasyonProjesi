@@ -93,34 +93,34 @@
                                          alt="User profile picture">
 
                                 </div>
-                                @foreach(var x in Model) {
-                                <h3 class="profile-username text-center">@x.CariAd @x.CariSoyad</h3>
+                          
+                                <h3 class="profile-username text-center">@ViewBag.adSoyad</h3>
 
-                                <p class="text-muted text-center">@x.CariMail</p>
-                                }
+                                <p class="text-muted text-center">@ViewBag.m</p>
+                                
                                 <ul class="list-group list-group-unbordered mb-3">
 
                                     <li class="list-group-item">
 
-                                        <b>Followers</b> <a class="float-right">1,322</a>
+                                        <b>Toplam Satış:</b> <a class="float-right">@ViewBag.toplamSatis</a>
 
                                     </li>
 
                                     <li class="list-group-item">
 
-                                        <b>Following</b> <a class="float-right">543</a>
+                                        <b>Toplam Satış Tutarı:</b> <a class="float-right">@ViewBag.toplamTutar ₺</a>
 
                                     </li>
 
                                     <li class="list-group-item">
 
-                                        <b>Friends</b> <a class="float-right">13,287</a>
+                                        <b>Toplam Ürün Sayısı:</b> <a class="float-right">@ViewBag.toplamUrunSayisi</a>
 
                                     </li>
 
                                 </ul>
 
-                                <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+                                <a href="#" class="btn btn-primary btn-block"><b>Kargo Takip</b></a>
 
                             </div>
 
@@ -135,7 +135,7 @@
 
                             <div class="card-header">
 
-                                <h3 class="card-title">About Me</h3>
+                                <h3 class="card-title">Hakkımda</h3>
 
                             </div>
 
@@ -147,7 +147,7 @@
 
                             <p class="text-muted">
 
-                                Yazılım Mühendisi
+                                Yazılım Mühendisi @ViewBag.mid
 
                             </p>
 
@@ -164,9 +164,9 @@
                             <p class="text-muted">(532) (123-4567)</p>
                             <hr>
 
-                            <strong><i class="far fa-file-alt mr-1"></i> Notes</strong>
+                            <strong><i class="far fa-file-alt mr-1"></i> Duyurular</strong>
 
-                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+                            <p class="text-muted">Yeni ürünlerimiz için web sitemizi ziyaret edebilirsiniz.</p>
 
                         </div>
                             }

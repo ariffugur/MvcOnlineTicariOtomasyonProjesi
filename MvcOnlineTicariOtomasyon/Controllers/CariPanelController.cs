@@ -17,6 +17,16 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var mail = (string)Session["CariMail"];
             var degerler = c.Carilers.Where(x => x.CariMail == mail).ToList();
             ViewBag.m = mail;
+            var mailId=c.Carilers.Where(x=>x.CariMail==mail).Select(y=>y.CariId).FirstOrDefault();
+            ViewBag.mid = mailId;
+            var toplamSatis=c.SatisHarekets.Where(x=>x.CariId==mailId).Count();
+            ViewBag.toplamSatis=toplamSatis;
+            var toplamTutar=c.SatisHarekets.Where(x=>x.CariId == mailId).Sum(y=>y.ToplamTutar);
+            var toplamUrunSayisi=c.SatisHarekets.Where(x=>x.CariId == mailId).Sum(y=>y.Adet);
+            ViewBag.toplamTutar=toplamTutar;
+            ViewBag.toplamUrunSayisi = toplamUrunSayisi;
+            var adSoyad = c.Carilers.Where(x => x.CariMail == mail).Select(y => y.CariAd + " " + y.CariSoyad).FirstOrDefault();
+            ViewBag.adSoyad=adSoyad;
             return View(degerler);
         }
         [Authorize]
