@@ -15,7 +15,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         public ActionResult Index()
         {
             var mail = (string)Session["CariMail"];
-            var degerler = c.Carilers.Where(x => x.CariMail == mail).ToList();
+            var degerler = c.Mesajlars.Where(x => x.Alici == mail).ToList();
             ViewBag.m = mail;
             var mailId=c.Carilers.Where(x=>x.CariMail==mail).Select(y=>y.CariId).FirstOrDefault();
             ViewBag.mid = mailId;
@@ -110,6 +110,14 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             FormsAuthentication.SignOut();
             Session.Abandon();
             return RedirectToAction("Index","Login");
+        }
+        public PartialViewResult Partial1()
+        {
+
+            var mail = (string)Session["CariMail"];
+            var id=c.Carilers.Where(x=>x.CariMail==mail).Select(y=>y.CariId).FirstOrDefault();
+            var cariBul = c.Carilers.Find(id);
+            return PartialView("Partial1", cariBul);
         }
     }
 }

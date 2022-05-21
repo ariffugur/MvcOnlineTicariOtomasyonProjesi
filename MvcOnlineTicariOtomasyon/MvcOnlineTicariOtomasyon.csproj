@@ -215,6 +215,9 @@
     <Content Include="AdminLTE-3.0.4\dist\css\alt\adminlte.pages.min.css" />
     <Content Include="AdminLTE-3.0.4\dist\css\alt\adminlte.plugins.css" />
     <Content Include="AdminLTE-3.0.4\dist\css\alt\adminlte.plugins.min.css" />
+    <Content Include="AdminLTE-3.0.4\dist\img\2.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\4.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\5.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\AdminLTELogo.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\avatar.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\avatar04.png" />
@@ -2944,6 +2947,7 @@
     <Content Include="Views\CariPanel\YeniMesaj.cshtml" />
     <Content Include="Views\CariPanel\KargoTakip.cshtml" />
     <Content Include="Views\CariPanel\CariKargoTakip.cshtml" />
+    <Content Include="Views\CariPanel\partial1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
