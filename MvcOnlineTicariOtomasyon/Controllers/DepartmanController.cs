@@ -19,17 +19,15 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpGet]
         public ActionResult DepartmanEkle()
         {
-
             return View();
         }
         [HttpPost]
         public ActionResult DepartmanEkle(Departman d)
         {
-            
-                c.Departmans.Add(d);
-                c.SaveChanges();
-                return RedirectToAction("Index");
-            
+            d.Durum = true;
+            c.Departmans.Add(d);
+            c.SaveChanges();
+            return RedirectToAction("Index");
         }
         public ActionResult DepartmanSil(int id)
         {
@@ -45,7 +43,6 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         }
         public ActionResult DepartmanGuncelle(Departman p)
         {
-
             var dept = c.Departmans.Find(p.DepartmanId);
             dept.DepartmanAd = p.DepartmanAd;
             c.SaveChanges();
@@ -53,8 +50,8 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         }
         public ActionResult DepartmanDetay(int id)
         {
-            var degerler=c.Personels.Where(x=>x.Departmanid==id).ToList();
-            var dpt=c.Departmans.Where(x=>x.DepartmanId==id).Select(y=>y.DepartmanAd).FirstOrDefault();
+            var degerler = c.Personels.Where(x => x.Departmanid == id).ToList();
+            var dpt = c.Departmans.Where(x => x.DepartmanId == id).Select(y => y.DepartmanAd).FirstOrDefault();
             ViewBag.d = dpt;
             return View(degerler);
         }
@@ -65,6 +62,5 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             ViewBag.dpers = per;
             return View(degerler);
         }
-
     }
 }

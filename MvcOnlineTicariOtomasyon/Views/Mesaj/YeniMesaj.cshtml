@@ -1,7 +1,7 @@
 ﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Mesajlar
 @{
     ViewBag.Title = "YeniMesaj";
-    Layout = "~/Views/Shared/_CariLayout.cshtml";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -58,7 +58,7 @@
 
                 <div class="col-sm-6">
 
-                    <h1>Yeni Mesaj Oluştur</h1>
+                    <h1>Mesaj Oluştur</h1>
 
                 </div>
 
@@ -80,13 +80,13 @@
 
                 <div class="col-md-3">
 
-                    <a href="/CariPanel/GelenMesajlar/" class="btn btn-primary btn-block mb-3">Gelen Kutusu</a>
+                    <a href="/Mesaj/GelenMesajlar/" class="btn btn-primary btn-block mb-3">Gelen Kutusu</a>
 
                     <div class="card">
 
                         <div class="card-header">
 
-                            <h3 class="card-title"></h3>
+                            <h3 class="card-title">Folders</h3>
 
                             <div class="card-tools">
 
@@ -106,7 +106,7 @@
 
                                 <li class="nav-item active">
 
-                                    <a href="/CariPanel/GelenMesajlar/" class="nav-link">
+                                    <a href="/Mesaj/GelenMesajlar/" class="nav-link">
 
                                         <i class="fas fa-inbox"></i> Gelen Kutusu
 
@@ -118,7 +118,7 @@
 
                                 <li class="nav-item">
 
-                                    <a href="/CariPanel/GidenMesajlar/" class="nav-link">
+                                    <a href="/Mesaj/GidenMesajlar/" class="nav-link">
 
                                         <i class="far fa-envelope"></i> Gönderilen
                                         <span class="badge bg-danger float-right">@ViewBag.d2</span>
@@ -127,7 +127,6 @@
 
                                 </li>
 
-                               
 
                             </ul>
 
@@ -139,7 +138,6 @@
 
                     <!-- /.card -->
 
-                  
 
                     <!-- /.card -->
 
@@ -184,7 +182,7 @@
                         </form>
                         <!-- /.card-body -->
 
-                     
+              
 
                         <!-- /.card-footer -->
 

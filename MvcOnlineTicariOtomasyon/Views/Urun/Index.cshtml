@@ -4,6 +4,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
+
 <br />
 @using (Html.BeginForm("Index", "Urun", FormMethod.Get))
             {
@@ -24,7 +25,6 @@
         <th>Sil</th>
         <th>Güncelle</th>
         <th>Satış Yap</th>
-
     </tr>
     @foreach(var u in Model)
 {
@@ -48,4 +48,3 @@
 }
 </table>
 <a href="/Urun/YeniUrun/" class="btn btn-primary">Yeni Urun</a>
-

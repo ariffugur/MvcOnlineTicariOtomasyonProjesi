@@ -29,14 +29,14 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             List<SelectListItem> deger2 = (from x in c.Carilers.ToList()
                                            select new SelectListItem
                                            {
-                                               Text = x.CariAd+" "+x.CariSoyad,
+                                               Text = x.CariAd + " " + x.CariSoyad,
                                                Value = x.CariId.ToString()
                                            }).ToList();
             ViewBag.dgr2 = deger2;
             List<SelectListItem> deger3 = (from x in c.Personels.ToList()
                                            select new SelectListItem
                                            {
-                                               Text = x.PersonelAd+" "+x.PersonelSoyad,
+                                               Text = x.PersonelAd + " " + x.PersonelSoyad,
                                                Value = x.PersonelId.ToString()
                                            }).ToList();
             ViewBag.dgr3 = deger3;
@@ -45,7 +45,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult YeniSatis(SatisHareket s)
         {
-            s.Tarih=DateTime.Parse(DateTime.Now.ToShortDateString());
+            s.Tarih = DateTime.Parse(DateTime.Now.ToShortDateString());
             c.SatisHarekets.Add(s);
             c.SaveChanges();
             return RedirectToAction("Index");
@@ -75,18 +75,18 @@ namespace MvcOnlineTicariOtomasyon.Controllers
                                            }).ToList();
             ViewBag.dgr3 = deger3;
             var deger = c.SatisHarekets.Find(id);
-            return View("SatisGetir",deger);
+            return View("SatisGetir", deger);
         }
         public ActionResult SatisGuncelle(SatisHareket p)
         {
             var deger = c.SatisHarekets.Find(p.SatisId);
-            deger.CariId=p.CariId;
-            deger.Adet=p.Adet;
-            deger.Fiyat=p.Fiyat;
-            deger.PersonelId=p.PersonelId;
-            deger.Tarih=p.Tarih;
-            deger.ToplamTutar=p.ToplamTutar;
-            deger.UrunId=p.UrunId;
+            deger.CariId = p.CariId;
+            deger.Adet = p.Adet;
+            deger.Fiyat = p.Fiyat;
+            deger.PersonelId = p.PersonelId;
+            deger.Tarih = p.Tarih;
+            deger.ToplamTutar = p.ToplamTutar;
+            deger.UrunId = p.UrunId;
             c.SaveChanges();
             return RedirectToAction("Index");
         }

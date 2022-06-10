@@ -29,8 +29,6 @@ namespace MvcOnlineTicariOtomasyon.Controllers
                                                Value=x.KategoriID.ToString()
                                            }).ToList();
             ViewBag.dgr1 = deger1;
-
-                                        
             return View();
         }
         [HttpPost]
@@ -56,7 +54,6 @@ namespace MvcOnlineTicariOtomasyon.Controllers
                                                Value = x.KategoriID.ToString()
                                            }).ToList();
             ViewBag.dgr1 = deger1;
-
             var urunDeger = c.Uruns.Find(id);
             return View("UrunGetir",urunDeger);
         }
@@ -102,6 +99,5 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index","Satis");
         }
-
     }
 }

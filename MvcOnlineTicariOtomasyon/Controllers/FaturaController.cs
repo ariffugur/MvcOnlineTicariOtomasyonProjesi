@@ -48,6 +48,8 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         public ActionResult FaturaDetay(int id)
         {
             var degerler = c.FaturaKalems.Where(x => x.FaturaId == id).ToList();
+            var fatura = c.Faturalars.Where(x => x.FaturaId == id).Select(y => y.TeslimAlan).FirstOrDefault();
+            ViewBag.fatura = fatura;
 
             return View(degerler);
         }

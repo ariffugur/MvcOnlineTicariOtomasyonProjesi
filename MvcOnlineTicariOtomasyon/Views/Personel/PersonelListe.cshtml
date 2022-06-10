@@ -4,7 +4,6 @@
     ViewBag.Title = "PersonelListe";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +12,6 @@
     <title>AdminLTE 3 | Contacts</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Font Awesome -->
     <link rel="stylesheet" href="~/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
@@ -26,7 +24,6 @@
 <body class="hold-transition sidebar-mini">
     <!-- Site wrapper -->
     <div class="wrapper">
-    
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <div class="container-fluid">
@@ -34,14 +31,11 @@
                         <div class="col-sm-6">
                             <h1>Personeller</h1>
                         </div>
-                    
                     </div>
                 </div><!-- /.container-fluid -->
             </section>
-
             <!-- Main content -->
             <section class="content">
-
                 <!-- Default box -->
                 <div class="card card-solid">
                     <div class="card-body pb-0">
@@ -56,10 +50,7 @@
                                         <div class="row">
                                             <div class="col-7">
                                                 <h2 class="lead"><b></b>@x.PersonelAd @x.PersonelSoyad</h2>
-                                                <p class="text-muted text-sm"><b>About: </b> Web Designer / UX / Graphic Artist / Coffee Lover </p>
                                                 <ul class="ml-4 mb-0 fa-ul text-muted">
-                                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address: Demo Street 123, Demo City 04312, NJ</li>
-                                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23 52</li>
                                                 </ul>
                                             </div>
                                             <div class="col-5 text-center">
@@ -69,7 +60,7 @@
                                     </div>
                                     <div class="card-footer">
                                         <div class="text-right">
-                                            <a href="/Personel/PersonelGetir/@x.PersonelId" class="btn btn-sm bg-teal">
+                                            <a href="/Mesaj/YeniMesaj/@x.PersonelId" class="btn btn-sm bg-teal">
                                                 <i class="fas fa-comments"></i>
                                             </a>
                                             <a href="/Departman/DepartmanPersonelSatis/@x.PersonelId" class="btn btn-sm btn-primary">
@@ -82,22 +73,16 @@
                             }
                         </div>
                     </div>
-              
                 </div>
                 <!-- /.card -->
-
             </section>
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
-
-   
-
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
             <!-- Control sidebar content goes here -->
         </aside>
- 
     <!-- ./wrapper -->
     <!-- jQuery -->
     <script src="../../plugins/jquery/jquery.min.js"></script>

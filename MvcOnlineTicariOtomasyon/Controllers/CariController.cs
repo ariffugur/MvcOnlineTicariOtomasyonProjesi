@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MvcOnlineTicariOtomasyon.Models.Siniflar;
-
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
     public class CariController : Controller

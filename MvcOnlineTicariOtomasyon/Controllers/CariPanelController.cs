@@ -102,7 +102,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [Authorize]
         public ActionResult CariKargoTakip(string id)
         {
-            var degerler = c.KargoTakips.Where(x => x.TakipKodu == id).ToList();
+            var degerler = c.KargoDetays.Where(x => x.TakipKodu == id).ToList();
             return View(degerler);
         }
         public ActionResult LogOut()
