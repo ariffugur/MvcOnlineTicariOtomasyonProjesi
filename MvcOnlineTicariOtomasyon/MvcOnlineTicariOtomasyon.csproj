@@ -186,6 +186,7 @@
     <Compile Include="Models\Siniflar\Urun.cs" />
     <Compile Include="Models\Siniflar\Yapilacak.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Roller\AdminRoleProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminLTE-3.0.4\build\config\postcss.config.js" />
@@ -238,6 +239,7 @@
     <Content Include="AdminLTE-3.0.4\dist\img\credit\visa.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\default-150x150.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\icons.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\mvc.jpg" />
     <Content Include="AdminLTE-3.0.4\dist\img\photo1.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\photo2.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\photo3.jpg" />
@@ -2959,6 +2961,7 @@
     <Content Include="Views\Mesaj\YeniMesaj.cshtml" />
     <Content Include="Views\Mesaj\MesajDetay.cshtml" />
     <Content Include="Views\Mesaj\GidenMesajlar.cshtml" />
+    <Content Include="Views\UrunDetay\UrunuGoruntule.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

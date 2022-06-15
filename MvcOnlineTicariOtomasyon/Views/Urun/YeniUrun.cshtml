@@ -7,29 +7,31 @@
 <h2>Yeni Urun Sayfası</h2>
 <br />
 <form class="form-group" method="post">
-    @Html.LabelFor(x => x.UrunAd)
+    @Html.LabelFor(x => x.UrunAd, "Ürün Adı")
     @Html.TextBoxFor(x => x.UrunAd, new { @class = "form-control" })
     <br />
-    @Html.LabelFor(x => x.Marka)
+    @Html.LabelFor(x => x.Marka, "Marka")
     @Html.TextBoxFor(x => x.Marka, new { @class = "form-control" })
     <br />
-    @Html.LabelFor(x => x.Stok)
+    @Html.LabelFor(x => x.Stok, "Stok")
     @Html.TextBoxFor(x => x.Stok, new { @class = "form-control" })
     <br />
-    @Html.LabelFor(x => x.AlisFiyati)
+    @Html.LabelFor(x => x.AlisFiyati, "Alış Fiyatı")
     @Html.TextBoxFor(x => x.AlisFiyati, new { @class = "form-control" })
     <br />
-    @Html.LabelFor(x => x.SatisFiyati)
+    @Html.LabelFor(x => x.SatisFiyati, "Satış Fiyatı")
     @Html.TextBoxFor(x => x.SatisFiyati, new { @class = "form-control" })
     <br />
-    @Html.LabelFor(x => x.Kategori.KategoriID)
+    @Html.LabelFor(x => x.Kategori.KategoriID, "Kategori")
     @Html.DropDownListFor(x => x.KategoriId, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
-    @*@Html.TextBoxFor(x => x.KategoriId, new { @class = "form-control" })*@
     <br />
-    @Html.LabelFor(x => x.UrunGorsel)
+    @Html.LabelFor(x => x.UrunGorsel, "Görsel")
     @Html.TextBoxFor(x => x.UrunGorsel, new { @class = "form-control" })
     <br />
-    @Html.LabelFor(x => x.Durum)
+    @Html.LabelFor(x => x.Aciklama, "Açıklama")
+    @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Durum, "Durum")
     @Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })
     <br />
     <button class="btn btn-primary">Kaydet</button>

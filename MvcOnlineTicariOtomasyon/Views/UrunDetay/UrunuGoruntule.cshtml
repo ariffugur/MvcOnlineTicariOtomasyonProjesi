@@ -1,0 +1,184 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Urun
+@{
+    ViewBag.Title = "UrunuGoruntule";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Ürün Detay</h2>
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>AdminLTE 3 | E-commerce</title>
+
+    <!-- Tell the browser to be responsive to screen width -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
+
+    <!-- Ionicons -->
+
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <!-- overlayScrollbars -->
+
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/dist/css/adminlte.min.css">
+
+    <!-- Google Font: Source Sans Pro -->
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+</head>
+
+<body class="hold-transition sidebar-mini">
+
+    <!-- Site wrapper -->
+
+    <div class="wrapper">
+
+        <!-- Navbar -->
+
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+
+            <!-- Left navbar links -->
+            <!-- SEARCH FORM -->
+            <!-- Right navbar links -->
+
+        </nav>
+
+        <!-- /.navbar -->
+        <!-- Main Sidebar Container -->
+        <!-- Main content -->
+
+        <section class="content">
+
+            <!-- Default box -->
+
+            <div class="card card-solid">
+
+                
+
+                    <div class="card-body">
+
+                        <div class="row">
+
+                            <div class="col-12 col-sm-6">
+
+                                <h3 class="d-inline-block d-sm-none">LOWA Men’s Renegade GTX Mid Hiking Boots Review</h3>
+
+                                <div class="col-12">
+
+                                    <img src="@ViewBag.gorsel" class="product-image" alt="Product Image">
+
+                                </div>
+           
+
+                            </div>
+
+                            <div class="col-12 col-sm-6">
+
+                                <h3 class="my-3"></h3>
+
+                                <p>@ViewBag.aciklama</p>
+
+                                <hr>
+                                <div class="bg-gray py-2 px-3 mt-4">
+
+                                    <h2 class="mb-0">
+                                       Marka: @ViewBag.marka
+
+                                    </h2>
+                                      
+                                    <h4 class="mt-0">
+
+                                        <small>Ürün:@ViewBag.urunAd</small>
+
+                                    </h4>
+
+                                </div>
+
+                                <div class="bg-gray py-2 px-3 mt-4">
+
+                                    <h2 class="mb-0">
+                                        ₺@ViewBag.satisFiyat
+
+                                    </h2>
+                                    <h4 class="mt-0">
+
+                                        <small>Alış Fiyat:₺@ViewBag.alisFiyat</small>
+
+                                    </h4>
+
+                                </div>
+
+                                <div class="mt-4">
+
+
+
+
+
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+
+   
+
+                    </div>
+
+                    <!-- /.card-body -->
+
+
+            </div>
+
+            <!-- /.card -->
+
+        </section>
+
+        <!-- /.content -->
+
+    </div>
+
+    <!-- /.content-wrapper -->
+    <!-- Control Sidebar -->
+
+    <aside class="control-sidebar control-sidebar-dark">
+
+        <!-- Control sidebar content goes here -->
+
+    </aside>
+
+    <!-- /.control-sidebar -->
+    <!-- ./wrapper -->
+    <!-- jQuery -->
+
+    <script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap 4 -->
+
+    <script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AdminLTE App -->
+
+    <script src="~/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
+
+    <!-- AdminLTE for demo purposes -->
+
+    <script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>
+
+</body>
+
+</html>

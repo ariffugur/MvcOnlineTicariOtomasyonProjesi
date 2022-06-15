@@ -16,6 +16,9 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string Marka { get; set; }
+        [Column(TypeName = "Varchar")]
+        [StringLength(5000)]
+        public string Aciklama { get; set; }
         public short Stok { get; set; }
         public decimal AlisFiyati { get; set; }
         public decimal SatisFiyati { get; set; }

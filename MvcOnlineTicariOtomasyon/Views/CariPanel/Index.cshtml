@@ -89,14 +89,12 @@
                                 <div class="text-center">
 
                                     <img class="profile-user-img img-fluid img-circle"
-                                         src="~/AdminLTE-3.0.4/dist/img/user4-128x128.jpg"
+                                         src="~/AdminLTE-3.0.4/dist/img/mvc.jpg"
                                          alt="User profile picture">
 
                                 </div>
 
                                 <h3 class="profile-username text-center">@ViewBag.adSoyad</h3>
-
-                                <p class="text-muted text-center">@ViewBag.m</p>
 
                                 <ul class="list-group list-group-unbordered mb-3">
 
@@ -154,13 +152,13 @@
 
                                     <strong><i class="fas fa-map-marker-alt mr-1"></i> Şehir</strong>
 
-                                    <p class="text-muted">Şehir</p>
+                                    <p class="text-muted">@ViewBag.sehir</p>
 
                                     <hr>
 
-                                    <strong><i class="fas fa-pencil-alt mr-1"></i> Telefon</strong>
+                                    <strong><i class="fas fa-pencil-alt mr-1"></i> E-Posta</strong>
 
-                                    <p class="text-muted">(532) (123-4567)</p>
+                                    <p class="text-muted">      @ViewBag.m</p>
                                     <hr>
 
                                     <strong><i class="far fa-file-alt mr-1"></i> Duyurular</strong>
@@ -283,23 +281,7 @@
 
     </div>
 
-    <!-- /.content-wrapper -->
-
-    <footer class="main-footer">
-
-        <div class="float-right d-none d-sm-block">
-
-            <b>Version</b> 3.0.4
-
-        </div>
-
-        <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights
-
-        reserved.
-
-    </footer>
-
-    <!-- Control Sidebar -->
+    
 
     <aside class="control-sidebar control-sidebar-dark">
 

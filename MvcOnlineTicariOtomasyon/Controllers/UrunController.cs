@@ -63,6 +63,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             urn.AlisFiyati = p.AlisFiyati;
             urn.Durum = p.Durum;
             urn.KategoriId = p.KategoriId;
+            urn.Aciklama = p.Aciklama;
             urn.Marka = p.Marka;
             urn.SatisFiyati = p.SatisFiyati;
             urn.Stok = p.Stok;

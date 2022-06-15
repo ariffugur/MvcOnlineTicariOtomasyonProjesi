@@ -17,16 +17,18 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var mail = (string)Session["CariMail"];
             var degerler = c.Mesajlars.Where(x => x.Alici == mail).ToList();
             ViewBag.m = mail;
-            var mailId=c.Carilers.Where(x=>x.CariMail==mail).Select(y=>y.CariId).FirstOrDefault();
+            var mailId = c.Carilers.Where(x => x.CariMail == mail).Select(y => y.CariId).FirstOrDefault();
             ViewBag.mid = mailId;
-            var toplamSatis=c.SatisHarekets.Where(x=>x.CariId==mailId).Count();
-            ViewBag.toplamSatis=toplamSatis;
-            var toplamTutar=c.SatisHarekets.Where(x=>x.CariId == mailId).Sum(y=>y.ToplamTutar);
-            var toplamUrunSayisi=c.SatisHarekets.Where(x=>x.CariId == mailId).Sum(y=>y.Adet);
-            ViewBag.toplamTutar=toplamTutar;
+            var sehir = c.Carilers.Where(x => x.CariId == mailId).Select(y => y.CariSehir).FirstOrDefault();
+            ViewBag.sehir = sehir;
+            var toplamSatis = c.SatisHarekets.Where(x => x.CariId == mailId).Count();
+            ViewBag.toplamSatis = toplamSatis;
+            var toplamTutar = c.SatisHarekets.Where(x => x.CariId == mailId).Sum(y => y.ToplamTutar);
+            var toplamUrunSayisi = c.SatisHarekets.Where(x => x.CariId == mailId).Sum(y => y.Adet);
+            ViewBag.toplamTutar = toplamTutar;
             ViewBag.toplamUrunSayisi = toplamUrunSayisi;
             var adSoyad = c.Carilers.Where(x => x.CariMail == mail).Select(y => y.CariAd + " " + y.CariSoyad).FirstOrDefault();
-            ViewBag.adSoyad=adSoyad;
+            ViewBag.adSoyad = adSoyad;
             return View(degerler);
         }
         [Authorize]
@@ -109,13 +111,13 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         {
             FormsAuthentication.SignOut();
             Session.Abandon();
-            return RedirectToAction("Index","Login");
+            return RedirectToAction("Index", "Login");
         }
         public PartialViewResult Partial1()
         {
 
             var mail = (string)Session["CariMail"];
-            var id=c.Carilers.Where(x=>x.CariMail==mail).Select(y=>y.CariId).FirstOrDefault();
+            var id = c.Carilers.Where(x => x.CariMail == mail).Select(y => y.CariId).FirstOrDefault();
             var cariBul = c.Carilers.Find(id);
             return PartialView("Partial1", cariBul);
         }
